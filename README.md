@@ -12,9 +12,9 @@
 
 * 確認你的開發環境已經安裝 Flutter 和 Dart SDK。
 * 開啟終端機（terminal），並將目錄切換到此應用程式的根目錄。
-* 在終端機中輸入以下命令來啟動應用程式：
-`flutter pub upgrade`
-`flutter run`
+* 在終端機中輸入以下命令來啟動應用程式：  
+`flutter pub upgrade`  
+`flutter run`  
 
 ## 程式碼架構
 此應用程式主要由以下幾個部分組成：
