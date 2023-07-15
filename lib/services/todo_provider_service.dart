@@ -40,4 +40,15 @@ class TodoProviderService {
     // 更新該 Todo
     context.read<TodoDao>().updateTodo(todo);
   }
+
+  // 透過 getTodos() 獲取所有 Todo 的清單, 迴圈判定已完成的任務並放入新的清單, 判定清單的元素數, 獲取已完成的任務有幾個
+  Future<int> getNumberOfCompletedTodos() async {
+    List<Todo> todos = await getTodos();
+
+    // 篩選出已完成的待辦事項
+    List<Todo> completedTodos = todos.where((todo) => todo.completed).toList();
+
+    // 返回已完成待辦事項的數量
+    return completedTodos.length;
+  }
 }
