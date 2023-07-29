@@ -48,6 +48,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
 
         // 當使用者輸入並提交後，創建一個新的待辦事項，並清空文字框
         onSubmitted: (inputValue) {
+          if (inputValue.contains('尚無任務')) {
+            return;
+          }
           setState(() {
             _todoProviderService.insertTodo(
               Todo(uuid.v4(), inputValue, "description", false),

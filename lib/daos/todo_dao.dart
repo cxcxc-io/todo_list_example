@@ -41,7 +41,7 @@ class TodoDao extends ChangeNotifier {
   }
 
   // 新增一個待辦事項到清單中，並將其儲存到本地儲存中。
-  void insertTodo(Todo todo) async {
+  Future<void> insertTodo(Todo todo) async {
     await _setLocalStoragePrefClient();
     await getTodos();
     todoList.add(todo);
@@ -55,7 +55,7 @@ class TodoDao extends ChangeNotifier {
   }
 
   // 從待辦事項清單和本地儲存中刪除一個待辦事項。
-  void deleteTodo(Todo todo) async {
+  Future<void> deleteTodo(Todo todo) async {
     if (todo.title == "尚無任務") {
       return;
     }
@@ -75,7 +75,7 @@ class TodoDao extends ChangeNotifier {
   }
 
   // 更新一個待辦事項並儲存到本地儲存中。
-  void updateTodo(Todo todo) async {
+  Future<void> updateTodo(Todo todo) async {
     await _setLocalStoragePrefClient();
     await getTodos();
 
