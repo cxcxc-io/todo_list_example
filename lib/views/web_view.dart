@@ -74,17 +74,19 @@ class _WebViewState extends State<WebView> {
         ],
       ),
       // 浮動操作按鈕，用於控制滾動位置
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // 按下按鈕後，將滾動位置設置為頂部
-          _scrollController.animateTo(
-            0.0,
-            duration: const Duration(seconds: 1),
-            curve: Curves.easeOut,
-          );
-        },
-        child: const Icon(Icons.arrow_upward), // 使用向上箭頭的圖標
-      ),
+      floatingActionButton: (_selectedIndex == 0)
+          ? FloatingActionButton(
+              onPressed: () {
+                // 按下按鈕後，將滾動位置設置為頂部
+                _scrollController.animateTo(
+                  0.0,
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.easeOut,
+                );
+              },
+              child: const Icon(Icons.arrow_upward), // 使用向上箭頭的圖標
+            )
+          : null,
     );
   }
 }
